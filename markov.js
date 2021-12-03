@@ -36,7 +36,6 @@ class MarkovMachine {
 
   makeText(numWords = 100) {
     let pickedWord = MarkovMachine.getWord(this.words);
-    // let pickedWord = capitalizeFirstLetter(firstWord);
     let textList = [];
 
     while (numWords > 0 && pickedWord) {
@@ -45,7 +44,7 @@ class MarkovMachine {
       pickedWord = MarkovMachine.getWord(nextWords);
       numWords--;
     }
-
+    textList[0] = capitalizeFirstLetter(textList[0]);
     return textList.join(" ");
   }
 
